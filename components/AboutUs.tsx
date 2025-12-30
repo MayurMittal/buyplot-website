@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Award, Briefcase, Heart } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function AboutUs() {
   const [imageError, setImageError] = useState(false)
@@ -38,16 +39,14 @@ export default function AboutUs() {
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green-400 to-royal-blue-400 rounded-3xl transform rotate-3"></div>
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white">
                 {!imageError ? (
-                  <img
-                    src="/founder-photo.jpg?v=1"
+                  <Image
+                    src="/founder-photo.jpg"
                     alt="Dr. Rajeev Goyal - Founder & CEO of BuyPlot"
-                    className="w-full h-full object-contain p-4"
-                    onError={(e) => {
-                      console.error('Image failed to load:', e)
-                      console.log('Trying to load from:', '/founder-photo.jpg')
+                    fill
+                    className="object-contain p-4"
+                    onError={() => {
                       setImageError(true)
                     }}
-                    onLoad={() => console.log('Image loaded successfully')}
                   />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-forest-green-50 to-royal-blue-50">

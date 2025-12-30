@@ -102,22 +102,28 @@ export default function Footer() {
             <div className="flex space-x-4 mb-6">
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Facebook"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors cursor-not-allowed opacity-60"
+                aria-label="Facebook (Coming Soon)"
+                title="Coming Soon"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Instagram"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors cursor-not-allowed opacity-60"
+                aria-label="Instagram (Coming Soon)"
+                title="Coming Soon"
               >
                 <Instagram size={20} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 bg-gray-700 hover:bg-royal-blue-600 rounded-lg flex items-center justify-center transition-colors cursor-not-allowed opacity-60"
+                aria-label="Twitter (Coming Soon)"
+                title="Coming Soon"
               >
                 <Twitter size={20} />
               </a>

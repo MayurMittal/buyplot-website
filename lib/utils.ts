@@ -59,12 +59,19 @@ export async function fetchPropertiesFromGoogleSheet(
 
       if (values.length < headers.length) continue
 
+      // Validate type
+      const propertyType = values[typeIndex]?.trim()
+      const validTypes: Property['type'][] = ['Plot', 'Flat', 'Villa']
+      const type = (validTypes.includes(propertyType as Property['type']) 
+        ? propertyType 
+        : 'Plot') as Property['type']
+
       properties.push({
         id: values[idIndex] || `property-${i}`,
         title: values[titleIndex] || 'Untitled Property',
         location: values[locationIndex] || 'Location TBD',
         price: values[priceIndex] || 'Price on Request',
-        type: (values[typeIndex] as Property['type']) || 'Plot',
+        type,
         imageUrl: values[imageUrlIndex] || '',
         description: values[descriptionIndex] || '',
         rera_status: values[reraStatusIndex] || 'Pending',
